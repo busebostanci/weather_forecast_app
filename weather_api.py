@@ -14,4 +14,5 @@ def get_coordinates(city_name, api_key):
 
 def get_current_weather(api_username, api_password, valid_date_time, parameter, location):
     url = f"https://api.meteomatics.com/{valid_date_time}/{parameter}/{location}/csv?model=mix"
-    response = requests.get(url, auth=(api_username,
+    response = requests.get(url, auth=(api_username, api_password))
+    return response.content
